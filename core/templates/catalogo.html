@@ -1,17 +1,20 @@
 {% load static %}
 
+    
     <div class="produtos">
-        <div class='produto'>
+        {% for p in produtos %}
+            <div class='produto'>
+                
+                <div class='imagem'>
+                    <img src="{{ p.imagemPrincipal.thumb.url }}" alt="Produto">
+                </div>
             
-            <div class='imagem'>
-                <img src="{% static 'img/produto/Racao de gato 2.jpg' %}" alt="Produto">
+                <div class='textos'>
+                    <p class="descricao">{{ p.nome }}</p>
+                    <b class="preco">R$ {{ p.preco }} À Vista</b>
+                </div>
             </div>
         
-            <div class='textos'>
-                <p class="descricao">Ração Úmida Royal Canin Sachê Instinctive - Gatos Filhotes - 85g</p>
-                <b class="preco">R$ 299,99</b>
-            </div>
-        </div>
-
+        {% endfor %}
         
     </div>

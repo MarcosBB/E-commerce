@@ -25,3 +25,7 @@ urlpatterns = [
     path('', include('core.urls')),
 
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = "Cat House"
+admin.site.site_title = "Cat House"
+admin.site.index_title = "Página de administração"

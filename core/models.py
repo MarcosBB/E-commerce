@@ -1,6 +1,7 @@
 from django.db import models
 from stdimage.models import StdImageField
 import uuid
+from django.contrib.auth import get_user_model
 
 # Create your models here.
 def get_file_path(_instance, filename):
@@ -46,3 +47,14 @@ class Produto(Base):
 
     def __str__(self):
         return self.nome 
+
+class Compra(models.Model):
+    produtoId = models.ForeignKey("core.Produto", verbose_name=("Produto"), on_delete=models.CASCADE)
+    autor = models.ForeignKey(get_user_model(), verbose_name='Autor', on_delete=models.CASCADE)
+    quantidade = models.IntegerField('Quantidade', default=1)
+    dataDaCompra = models.DateField('dataDaCompra', auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Compra'
+        verbose_name_plural = 'Compras'
+

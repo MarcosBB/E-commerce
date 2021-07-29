@@ -3,6 +3,9 @@ from stdimage.models import StdImageField
 import uuid
 from django.contrib.auth import get_user_model
 
+
+from django.contrib.auth.models import AbstractUser, BaseUserManager
+
 # Create your models here.
 def get_file_path(_instance, filename):
     ext = filename.split('.')[-1]
@@ -17,20 +20,6 @@ class Base(models.Model):
 
     class Meta:
         abstract = True
-'''
-
-class Usuario(models.Model):
-    nome = models.CharField('Nome', max_length=100)
-    sobrenome = models.CharField('Sobrenome', max_length=100)
-    imagem = StdImageField('Imagem', upload_to=get_file_path, variations={'thumb': {'width': 480, 'height': 480, 'crop': True}})
-
-    class Meta:
-        verbose_name = 'Usuário'
-        verbose_name_plural = 'Usuários'
-
-    def __str__(self):
-        return self.nome + " " + self.sobrenome
-'''
 
 class Produto(Base):
     nome = models.CharField('Nome', max_length=90)
@@ -57,4 +46,6 @@ class Compra(models.Model):
     class Meta:
         verbose_name = 'Compra'
         verbose_name_plural = 'Compras'
+
+
 

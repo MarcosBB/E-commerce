@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Produto, Compra
 
-
 @admin.register(Produto)
 class CargoAdmin(admin.ModelAdmin):
     list_display = ('nome','preco' ,'modificado', 'ativo')
@@ -14,7 +13,7 @@ class CompraAdmin(admin.ModelAdmin):
 
     # Exibindo nome do usuário completo
     def _autor(self, instance):
-        return f'{instance.autor.get_full_name()}'
+        return f'{instance.autor.apelido}'
 
     # Mostrando apenas as compras do usuário logado
     def get_queryset(self, request):

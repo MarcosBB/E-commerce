@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    
+    {% if user.is_anonymous %}
+
+        <div class="titulo">
+            <h1>Erro</h1>
+        </div>
+
+        <h3>Login necessário para acessar as informações dessa página.</h3>
+    
+    {% else %}
+        <div class="titulo">
+            <h1>Historico de Compras</h1>
+        </div>
+
+        <table class="listaDoCarrinho">
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço Unitário</th>
+                <th>Preço Total</th>
+                <th>Data</th>
+            </tr>
+            
+            <tr>
+                <td>Ração umida para gatos adultos</td>
+                <td>1</select></td>
+                <td>R$ 50,00</td>
+                <td>R$ 50,00</td>
+                <td>04/07/2020</td>
+            </tr>
+            
+        </table>
+
+        {% endif %}
+
+{% endblock %}

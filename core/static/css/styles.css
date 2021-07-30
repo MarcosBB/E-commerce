@@ -201,9 +201,13 @@ nav {
     font-family: 'Roboto';
 }
 
+<<<<<<< Updated upstream:core/static/css/style2.css
 .listaDoCarrinho button {
     width: 100%;
     height: 36px;
+=======
+<<<<<<< Updated upstream:core/static/css/style2.css
+>>>>>>> Stashed changes:core/static/css/styles.css
 }
 
 .listaDoCarrinho select {
@@ -217,6 +221,11 @@ nav {
     height: 36px;
 }
 
+<<<<<<< Updated upstream:core/static/css/style2.css
+=======
+}
+=======
+>>>>>>> Stashed changes:core/static/css/styles.css
 h2, h3 {
     flex-wrap: wrap;
     font-family: 'Roboto';
@@ -225,3 +234,7 @@ h2, h3 {
     color:#006B60;
     letter-spacing: 3px;
 }
+<<<<<<< Updated upstream:core/static/css/style2.css
+=======
+>>>>>>> Stashed changes:core/static/css/styles.css
+>>>>>>> Stashed changes:core/static/css/styles.css

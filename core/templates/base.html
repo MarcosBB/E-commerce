@@ -13,7 +13,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="{% static 'css\style2.css' %}" >
+        <link rel="stylesheet" href="{% static 'css\styles.css' %}" >
     </head>
     <body>
 
@@ -43,7 +43,7 @@
                                     <a class="dropbtn">{{ user.apelido}}</a>
                                     <div class="dropdown-content">
                                         <a href="{% url 'logout' %}">Logout</a>
-                                        <a href="#">Hist.</a>
+                                        <a href="{% url 'historico' %}">Hist.</a>
                                     </div>
                                 </div>
                             {% endif %}

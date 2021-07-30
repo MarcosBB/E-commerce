@@ -11,3 +11,9 @@ class IndexView(TemplateView):
         context['produtos'] = Produto.objects.all()
 
         return context
+
+class CarrinhoView(TemplateView):
+    template_name = "carrinho.html"
+
+class LoginView(TemplateView):
+    template_name = "login.html"

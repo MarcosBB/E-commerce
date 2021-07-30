@@ -2,32 +2,39 @@
 {% load static %}
 {% block content %}
 
+    {% if user.is_anonymous %}
 
-    <div class="titulo">
-        <h1>Carrinho</h1>
-    </div>
-    
-    <div class="produtosNoCarrinho">
-
-        <div class='produtoNoCarrinho'>
-            
-            <div class='imagemNoCarrinho'>
-                <img src="produto/Racao de gato 1.jpg" alt="Produto">
-            </div>
-            
-            <div class='textosNoCarrinho'>
-                <p class="descricao"> aaaaa qqq qqq qq qq qq qq qq Úmida Royal Canin Sachê Instinctive - Gatos Filhotes - 85g</p>
-            </div>
-            <div class="precoNoCarrinho">
-                <b >R$ 299,99 à vista</b>
-
-            </div>
-            <div>
-                <select name="" id="numero"></select>
-            </div>
+        <div class="titulo">
+            <h1>Erro</h1>
         </div>
-        
-    </div>
 
+        <h3>Login necessário para acessar as informações dessa página.</h3>
+    
+    {% else %}
+        <div class="titulo">
+            <h1>Carrinho</h1>
+        </div>
+
+        <table class="listaDoCarrinho">
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço Unitário</th>
+                <th>Preço Total</th>
+                <th></th>
+            </tr>
+            
+            <tr>
+                <td>Ração umida para gatos adultos</td>
+                <td><select name="Quantidade" id="quantidade"></select></td>
+                <td>R$ 50,00</td>
+                <td>R$ 50,00</td>
+                <td><button>Remover</button></td>
+            </tr>
+            
+        </table>
+        <button class="comprar">Comprar</button>
+
+        {% endif %}
 
 {% endblock %}

@@ -3,17 +3,25 @@
     
     <div class="produtos">
         {% for p in produtos %}
+
             <div class='produto'>
-                
-                <div class='imagem'>
-                    <img src="{{ p.imagemPrincipal.thumb.url }}" alt="Produto">
-                </div>
             
-                <div class='textos'>
-                    <p class="descricao">{{ p.nome }}</p>
-                    <b class="preco">R$ {{ p.preco }} À Vista</b>
-                </div>
+            <div class='imagem'>
+                <img src="{{ p.imagemPrincipal.thumb.url }}" alt="Produto">
             </div>
+            
+            <div class='textos'>
+                <p class="descricao">{{ p.nome }}</p>
+            </div>
+            <div class="preco">
+                <b>R$ {{ p.preco }} À Vista</b>
+
+            </div>
+            <div class="carrinho">
+                <button><img src="{% static 'img/carrinho.png' %}" alt="Carrinho"></button>
+                
+            </div>
+        </div>
         
         {% endfor %}
         

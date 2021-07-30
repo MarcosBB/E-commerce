@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -14,13 +13,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="{% static 'css\style.css' %}" >
+        <link rel="stylesheet" href="{% static 'css\style2.css' %}" >
     </head>
     <body>
 
         <header>
             <nav>
-                <a href="/">
+                <a href="{% url 'index' %}">
                     <img class="logo" src="{% static 'img/cat_icon_138789.png' %}" alt="Logo" >
                 </a>
 
@@ -28,11 +27,20 @@
                     <img src="{% static 'img/patinhas.png' %}" alt="Patinhas1">
                 </div>
 
-                <ul class="nav-list">
-                    <li><a href="">Carrinho</a></li>
-                    <li><img class="usuario" src="{% static 'img/usuario/marcos.jpg' %}" alt="Perfil"></li>
-                    <li class="userName"><a>User</a></li>   
-                </ul>
+                <div>
+                    <ul class="nav-list">
+                        <li class="naousuario"><a href="{% url 'carrinho' %}">Carrinho</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropbtn">Marcos</a>
+                                <div class="dropdown-content">
+                                    <a href="{% url 'login' %}">Logout</a>
+                                    <a href="#">Hist.</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
                 
             </nav>
         </header>

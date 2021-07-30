@@ -18,8 +18,11 @@
 
             </div>
             <div class="carrinho">
+                {% if user.is_anonymous %}
+                <button>Faça login para usar o carrinho</button>
+                {% else %}
                 <button><img src="{% static 'img/carrinho.png' %}" alt="Carrinho"></button>
-                
+                {% endif %}
             </div>
         </div>
         

@@ -15,5 +15,3 @@ class IndexView(TemplateView):
 class CarrinhoView(TemplateView):
     template_name = "carrinho.html"
 
-class LoginView(TemplateView):
-    template_name = "login.html"

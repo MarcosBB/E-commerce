@@ -12,8 +12,6 @@ class IndexView(TemplateView):
 
         return context
 
-class CarrinhoView(TemplateView):
-    template_name = "carrinho.html"
 
 class HistoricoView(TemplateView):
     template_name = "historico.html"

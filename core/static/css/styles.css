@@ -1,7 +1,6 @@
 * {
     margin: 0px;
     padding: 0px;
-    
 }
 
 .titulo {
@@ -9,7 +8,6 @@
     width: 100%;
     padding-top: 2px;
     padding-bottom: 1px;
-
 }
 
 .titulo h1 {
@@ -21,7 +19,29 @@
     letter-spacing: 3px;
 }
 
+h2, h3 {
+    flex-wrap: wrap;
+    font-family: 'Roboto';
+    margin: 16px;
+    margin-left: 100px;
+    color:#006B60;
+    letter-spacing: 3px;
+}
 
+button {
+    background-color: #006B60;
+    color: white;
+    border-radius: 7px;
+    border:none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:#006b609f;
+    transition: .5s;
+}
+
+/*PRODUTOS*/
 .produtos {
     display: flex;
     justify-content: center;
@@ -78,20 +98,6 @@
 
 .carrinho {
     margin:8px;
-    
-}
-
-button {
-    background-color: #006B60;
-    color: white;
-    border-radius: 7px;
-    border:none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color:#006b609f;
-    transition: .5s;
 }
 
 .carrinho button {
@@ -105,6 +111,7 @@ button:hover {
     height: 24px;
 }
 
+/*HEADER*/
 .patinhas img{
     width: 180px;
     height: 50px;
@@ -118,7 +125,6 @@ header a {
     color: white;
     text-decoration: none;
     transition: 0.3s;
-    
     font-family: 'Roboto';
 }
 
@@ -139,7 +145,6 @@ nav {
     list-style: none;
     display: flex;
     align-items: center;
-   
     height: 46px;
 }
 
@@ -184,7 +189,6 @@ nav {
     position: absolute;
     background-color: #006B60;
     width: 100%;
-    
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -196,12 +200,15 @@ nav {
     display: block;
 }
   
-.dropdown-content a:hover {background-color:#00AB9A}
+.dropdown-content a:hover {
+    background-color:#00AB9A
+}
   
 .dropdown:hover .dropdown-content {
     display: block;
 }
-  
+
+/*CARRINHO*/
 .listaDoCarrinho {
     width: 90%;
     text-align: center;
@@ -218,16 +225,7 @@ nav {
     height: 36px;
 }
 
-h2, h3 {
-    flex-wrap: wrap;
-    font-family: 'Roboto';
-    margin: 16px;
-    margin-left: 100px;
-    color:#006B60;
-    letter-spacing: 3px;
-}
-
-
+/*LOGIN*/
 .login {
     background-color:#00AB9A;
     color:#FFFFFF;
@@ -265,4 +263,3 @@ h2, h3 {
     font-weight: bold;
     font-size: medium;
 }
-

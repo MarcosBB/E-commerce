@@ -1,16 +1,20 @@
-{% extends 'baseLogin.html' %}
+{% extends 'base.html' %}
 {% block content %}
-    <form class="form-signin" method="post" autocomplete="off">
-        {% csrf_token %}
+    <div class="login">
         <h1 class="h3 mb-3 font-weight-normal">Informe seus dados</h1>
 
-        <label for="username" class="sr-only">E-mail</label>
-        <input type="email" id="username" name="username" class="form-control" placeholder="Informe seu e-mail" required autofocus>
+        <form class="form-signin" method="post" autocomplete="off">
+            {% csrf_token %}
+            
+            <label for="username" class="sr-only">E-mail</label>
+            <input type="email" id="username" name="username" class="form-control" placeholder="Informe seu e-mail" required autofocus>
 
-        <label for="password" class="sr-only">Senha</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Informe sua senha" required>
+            <label for="password" class="sr-only">Senha</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Informe sua senha" required>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-    </form>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+        </form>
+    </div>
 
 {% endblock  %}

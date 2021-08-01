@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load widget_tweaks %}
+
 {% block content %}
 
     {% if user.is_anonymous %}
@@ -15,32 +17,60 @@
             <h1>Carrinho</h1>
         </div>
 
-        <table class="listaDoCarrinho">
-            <tr>
-                <th>Produto</th>
-                <th>Quantidade</th>
-                <th>Preço Unitário</th>
-                <th>Preço Total</th>
-                <th></th>
-            </tr>
-            
-            <tr>
-                <td>Ração umida para gatos adultos</td>
-                <td><select name="Quantidade" id="quantidade"></select></td>
-                <td>R$ 50,00</td>
-                <td>R$ 50,00</td>
-                <td><button>Remover</button></td>
-            </tr>
-            
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><button>Comprar</button></td>
-            </tr>
-        </table>
+        {% if carrinho %}
+            <table class="listaDoCarrinho">
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário</th>
+                    <th>Preço Total</th>
+                    <th></th>
+                </tr>
+                
+                
+                {% for item in carrinho %}
+                    <tr>
+                        <td>{{ item.produto.nome }}</td>
+                        <td>
+                            
+                            <form class="formDaQuantidadeNoCarrinho" action="{% url 'adicionar' item.produto.id %}" method="post">
+                                {% csrf_token %}
+                                <div class="quantidadeNoCarrinho">
+                                    <div>
+                                        {% render_field item.update_quantidade_form.quantidade class+="form-control" %}
+                                    </div>
+                                    <div>
+                                        <button type="submit">Atualizar</button>
+                                    </div>
+                                </div>
+                                {{ item.update_quantidade_form.override }}
+                            </form>
+                        
+                        </td>
+                        <td>R$ {{ item.preco }}</td>
+                        <td>R$ {{ item.preco_total }}</td>
+                        <td>
+                            <form action="{% url 'remover' item.produto.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit">Remover</button>
+                            </form>
+                        </td>
+                    </tr>
+   
+                {% endfor %}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>R$ {{carrinho.get_preco_total}}</td>
+                    <td><button>Comprar</button></td>
+                </tr>
+            </table>
+
+        {% else %}
+            <h3>Nenhum produto no carrinho.</h3>
 
         {% endif %}
+    {% endif %}
 
 {% endblock %}

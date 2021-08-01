@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'usuarios',
     'carrinho',
     'storages',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

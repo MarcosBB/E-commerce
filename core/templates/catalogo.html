@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load widget_tweaks %}
     
     <div class="produtos">
         {% for p in produtos %}
@@ -19,9 +19,21 @@
             </div>
             <div class="carrinho">
                 {% if user.is_anonymous %}
-                <button>Faça login para usar o carrinho</button>
+                <button class="facaLogin">Faça login para usar o carrinho</button>
                 {% else %}
-                <button><img src="{% static 'img/carrinho.png' %}" alt="Carrinho"></button>
+
+
+                <form action="{% url 'adicionar' p.id %}" method="post">
+                    {% csrf_token %}
+                    <div class="quantidade">
+                        {{ form }}
+                    </div>
+                    <div class="adicionarAoCarrinho">
+                        <button type="submit"><img src="{% static 'img/carrinho.png' %}" alt="Carrinho"></button>
+                        
+                    </div>
+                </form>   
+
                 {% endif %}
             </div>
         </div>

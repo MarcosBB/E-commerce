@@ -11,11 +11,6 @@ Os arquivos estáticos e as fotos dos produtos são hospedados no `AWS S3`.
 
 ## Acesso
 
-**Conta de Administrador:**
-
-login: admin@hotmail.com
-senha: administrando
-
 **Conta de Usuário:**
 
 login: usuario@hotmail.com

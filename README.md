@@ -1,12 +1,15 @@
 # E-commerce
  
 ## 📝 Sobre
-O Cat House é um site de vendas de produtos para gatinhos feito em `python` com o  framework `django` e banco de dados `postgreSQL` .
-Os arquivos estáticos e as fotos dos produtos são hospedados no `AWS S3`.
+O Cat House é um site de vendas de produtos para gatinhos feito não para vender produtos mas sim para integrar meu portfolio. O site conta com:
+* Página com catálogo de produtos que podem ser cadastrados na página de admin;
+* Autenticação e página de login;
+* Carrinho funcional.
 
+## ⚙️ Tecnologias utilizadas
+O backend foi feito em `python` com o framework `django` e banco de dados `postgreSQL`. O frontend foi feito com `HTML` e `CSS` (não foi usado nenhum template). O site foi hospedado no `heroku` e os arquivos estáticos e as fotos dos produtos foram hospedados no `AWS S3`.
 
 ## 🔗 Links
-
 **🚀 Acesse o [Cat House](https://e-commerce-mbb.herokuapp.com/)**
 
 ## Acesso
